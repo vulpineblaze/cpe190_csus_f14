@@ -1,0 +1,22 @@
+body {
+    background-color: #999999;
+}
+.wrapper {
+    width: 960px;
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+.left_col {
+    width: 158px;
+    float:left; /* add this */
+    border: 1px solid #aaa;
+}
+.double_col{
+    width: 318px;
+    float:left; /* add this */
+    border: 1px solid #aaa;
+}
+.right_col {
+    border: 1px solid green;
+    float: right; /* add this */
+}

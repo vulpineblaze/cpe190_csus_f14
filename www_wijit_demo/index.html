@@ -1,0 +1,146 @@
+
+
+<html>
+  <head>
+    <title>Wijit (tm) Calc Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script language="javascript" type="text/javascript">
+
+      function doFunction() {
+        // var input;
+        // alert('hello!'); 
+        var height_out = document.getElementById("height_out");
+        var angle_out = document.getElementById("angle_out");
+
+        var arm = document.getElementById('arm').value;
+        var torso = document.getElementById('torso').value;
+        var weight = document.getElementById('weight').value;
+        var angle = document.getElementById('angle').value;
+
+        var angle_start = 90;
+        var angle_stop = 90;
+        var change_height = 0;
+
+        if(arm > 100){
+          angle_start += 10;
+          angle_stop -= 10;
+        }else if(arm < 50){
+          angle_start -= 10;
+          angle_stop += 10;
+        }
+
+        if(torso > 100){
+          change_height += 10;
+          angle_start += 3;
+          angle_stop -= 3;
+        }else if(torso < 50){
+          change_height -= 10;
+          angle_start += 3;
+          angle_stop -= 3;
+        }
+
+        if(weight > 100){
+
+        }else if(weight < 70){
+
+        }
+
+        if(angle > 10 | angle < -10){
+
+        }else{
+
+        }
+
+        height_out.innerHTML += change_height +" [cm]. ";
+        angle_out.innerHTML += "Start: "+angle_start+" [deg], Stop: "+angle_stop+" [deg]. ";
+
+        // element.innerHTML = "Paragraph changed.";
+
+        // element.innerHTML += input;
+
+        // console.log(input, element);
+
+        // document.getElementById('showMeArea').value = finddivid(document.getElementById('mktprc'),document.getElementById('trdval'));
+      }
+
+      // document.getElementById("clickMe").onclick = function () { 
+      //   alert('hello!'); 
+      //   document.getElementById("demo")[0].innerHTML = "Paragraph changed.";
+      // };
+
+      // var jobValue = document.getElementById('user').value
+      // var x, y, z;
+      // x = 50;
+      // y = 10;
+      // document.write (jobValue); // prints a message
+      // document.write ("x = "); // prints a message
+      // document.write (x); // prints the value of x
+      // document.write (", y = "); // prints a message
+      // document.write (y); // prints value of y
+      // document.write ("<br>x + y is "); // prints a string message
+      // z = x + y; // adds 50 + 10 and assigns the result to the variable z
+      // document.write (z); // prints the value of z, which is 60
+      // document.write ("<br>x - y is "); // prints a string
+      // z = x - y; // substracts x from y and assigns the resulting value to z
+      // document.write (z); // prints the value of z, 40
+      // document.write ("<br>x * y is "); // prints a message
+      // z = x * y; // multiplies x * y and assigns result to z
+      // document.write (z); // prints z, 500
+      // document.write ("<br>x / y is "); // prints a message
+      // z = x / y; // dividies x by y assigns result to z
+      // document.write (z); // prints the value of z, 5
+    </script>
+
+  </head>
+  <body bgcolor=white>
+    <div class="wrapper">
+
+
+
+      <div class="double_col">
+        <table>
+          <tr>
+            <td>Arm Length [cm]: </td><td><input type="text" name="thing" id="arm"><BR></td>
+          </tr>
+
+          <tr>
+            <td>Torso Height [cm]: </td><td><input type="text" name="thing" id="torso"><BR></td>
+          </tr>
+
+          <tr>
+            <td>Weight [kg]: </td><td><input type="text" name="thing" id="weight"><BR></td>
+          </tr>
+
+          <tr>
+            <td>Bilateral Angle [deg]: </td><td><input type="text" name="thing" id="angle"><BR></td>
+          </tr>
+    
+          <tr> 
+            <td colspan="2">
+              <input id="calc" type="button" value="Calculate" onclick="doFunction();" /> 
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+
+      <div class="double_col">
+        <img width="320px" src="chair.png">
+      </div>
+
+      <div class="double_col" >
+        <p id="height_out">Raise/Lower seat by:  </p>
+        <p id="angle_out">Start/Stop angles are:  </p>
+        <BR>
+      </div>
+
+    </div>
+
+    <!-- <p id="demo">My First Paragraph</p> -->
+    
+
+
+  </body>
+</html>
