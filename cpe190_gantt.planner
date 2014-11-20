@@ -43,97 +43,262 @@
         <constraint type="must-start-on" time="20140916T000000Z"/>
       </task>
     </task>
-    <task id="8" name="Work Breakdown Structure" note="" work="0" start="20140916T080000Z" end="20140916T080000Z" work-start="20140916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="8" name="Work Breakdown Structure" note="" work="32400" start="20140916T080000Z" end="20140921T230000Z" work-start="20140916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
         <predecessor id="1" predecessor-id="4" type="FS"/>
       </predecessors>
+      <task id="9" name="Compose gantt chart" note="" work="10800" duration="280800" start="20140916T080000Z" end="20140921T230000Z" work-start="20140916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration"/>
+      <task id="10" name="Compose deliverable document rough draft" note="" work="21600" start="20140916T080000Z" end="20140916T150000Z" work-start="20140916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
     </task>
-    <task id="9" name="Breadboard Proof Presentation" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="10" name="Mid-Term Technical Review" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="11" name="End of Term Documentation" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="12" name="Market Review" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="13" name="Feature Report" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="14" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="15" name=" Weekly Reports Fall 14" note="" work="18000" start="20140902T000000Z" end="20141222T230000Z" work-start="20140902T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="16" name="Week 1" note="" work="18000" duration="327600" start="20140902T000000Z" end="20140908T230000Z" work-start="20140902T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
+    <task id="11" name="Project Timeline" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="12" name="Breadboard Proof Presentation" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="13" name="Mid-Term Technical Review" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="14" name="End of Term Documentation" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="15" name="Market Review" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="16" name="Feature Report" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="17" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="18" name=" Weekly Reports Fall 14" note="" work="54000" start="20140902T000000Z" end="20141222T230000Z" work-start="20140902T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="19" name="Week 1" note="" work="18000" duration="327600" start="20140902T000000Z" end="20140908T230000Z" work-start="20140902T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
         <constraint type="must-start-on" time="20140902T000000Z"/>
       </task>
-      <task id="17" name="Week 2" note="" work="0" duration="327600" start="20140908T230000Z" end="20140915T230000Z" work-start="20140909T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
-        <predecessors>
-          <predecessor id="1" predecessor-id="16" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="18" name="Week 3" note="" work="0" duration="327600" start="20140915T230000Z" end="20140922T230000Z" work-start="20140916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
-        <predecessors>
-          <predecessor id="1" predecessor-id="17" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="19" name="Week 4" note="" work="0" duration="327600" start="20140922T230000Z" end="20140929T230000Z" work-start="20140923T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
-        <predecessors>
-          <predecessor id="1" predecessor-id="18" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="20" name="Week 5" note="" work="0" duration="327600" start="20140929T230000Z" end="20141006T230000Z" work-start="20140930T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="20" name="Week 2" note="" work="10800" duration="327600" start="20140908T230000Z" end="20140915T230000Z" work-start="20140909T080000Z" percent-complete="100" priority="1" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="19" type="FS"/>
         </predecessors>
       </task>
-      <task id="21" name="Week 6" note="" work="0" duration="327600" start="20141006T230000Z" end="20141013T230000Z" work-start="20141007T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="21" name="Week 3 (DEFERED - align with ecshive)" note="&lt;BR&gt;DONE | start date is now due-date&#10;&#10;because ecshive is mislabeled" work="0" duration="327600" start="20140915T230000Z" end="20140922T230000Z" work-start="20140916T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="20" type="FS"/>
         </predecessors>
       </task>
-      <task id="22" name="Week 7" note="" work="0" duration="327600" start="20141013T230000Z" end="20141020T230000Z" work-start="20141014T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="22" name="Week 4" note="" work="25200" duration="327600" start="20140922T230000Z" end="20140929T230000Z" work-start="20140923T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="21" type="FS"/>
         </predecessors>
       </task>
-      <task id="23" name="Week 8" note="" work="0" duration="327600" start="20141020T230000Z" end="20141027T230000Z" work-start="20141021T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="23" name="Week 5" note="" work="0" duration="327600" start="20140929T230000Z" end="20141006T230000Z" work-start="20140930T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="22" type="FS"/>
         </predecessors>
       </task>
-      <task id="24" name="Week 9" note="" work="0" duration="327600" start="20141027T230000Z" end="20141103T230000Z" work-start="20141028T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="24" name="Week 6" note="" work="0" duration="327600" start="20141006T230000Z" end="20141013T230000Z" work-start="20141007T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="23" type="FS"/>
         </predecessors>
       </task>
-      <task id="25" name="Week 10" note="" work="0" duration="327600" start="20141103T230000Z" end="20141110T230000Z" work-start="20141104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="25" name="Week 7" note="" work="0" duration="327600" start="20141013T230000Z" end="20141020T230000Z" work-start="20141014T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="24" type="FS"/>
         </predecessors>
       </task>
-      <task id="26" name="Week 11" note="" work="0" duration="327600" start="20141110T230000Z" end="20141117T230000Z" work-start="20141111T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="26" name="Week 8" note="" work="0" duration="327600" start="20141020T230000Z" end="20141027T230000Z" work-start="20141021T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="25" type="FS"/>
         </predecessors>
       </task>
-      <task id="27" name="Week 12" note="" work="0" duration="327600" start="20141117T230000Z" end="20141124T230000Z" work-start="20141118T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="27" name="Week 9" note="" work="0" duration="327600" start="20141027T230000Z" end="20141103T230000Z" work-start="20141028T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="26" type="FS"/>
         </predecessors>
       </task>
-      <task id="28" name="Week 13" note="" work="0" duration="327600" start="20141124T230000Z" end="20141201T230000Z" work-start="20141125T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="28" name="Week 10" note="" work="0" duration="327600" start="20141103T230000Z" end="20141110T230000Z" work-start="20141104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="27" type="FS"/>
         </predecessors>
       </task>
-      <task id="29" name="Week 14" note="" work="0" duration="327600" start="20141201T230000Z" end="20141208T230000Z" work-start="20141202T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="29" name="Week 11" note="" work="0" duration="327600" start="20141110T230000Z" end="20141117T230000Z" work-start="20141111T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="28" type="FS"/>
         </predecessors>
       </task>
-      <task id="30" name="Week 15" note="" work="0" duration="327600" start="20141208T230000Z" end="20141215T230000Z" work-start="20141209T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="30" name="Week 12" note="" work="0" duration="327600" start="20141117T230000Z" end="20141124T230000Z" work-start="20141118T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="29" type="FS"/>
         </predecessors>
       </task>
-      <task id="31" name="Week 16" note="" work="0" duration="327600" start="20141215T230000Z" end="20141222T230000Z" work-start="20141216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="31" name="Week 13" note="" work="0" duration="327600" start="20141124T230000Z" end="20141201T230000Z" work-start="20141125T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
           <predecessor id="1" predecessor-id="30" type="FS"/>
         </predecessors>
       </task>
+      <task id="32" name="Week 14" note="" work="0" duration="327600" start="20141201T230000Z" end="20141208T230000Z" work-start="20141202T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+        <predecessors>
+          <predecessor id="1" predecessor-id="31" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="33" name="Week 15" note="" work="0" duration="327600" start="20141208T230000Z" end="20141215T230000Z" work-start="20141209T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+        <predecessors>
+          <predecessor id="1" predecessor-id="32" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="34" name="Week 16" note="" work="0" duration="327600" start="20141215T230000Z" end="20141222T230000Z" work-start="20141216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+        <predecessors>
+          <predecessor id="1" predecessor-id="33" type="FS"/>
+        </predecessors>
+      </task>
     </task>
+    <task id="35" name="Feasureset Deliverables" note="" work="36000" start="20140901T000000Z" end="20140911T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="36" name="Static Operator Characterization" note="" work="36000" start="20140901T000000Z" end="20140911T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="37" name="Research" note="" work="36000" start="20140907T000000Z" end="20140910T230000Z" work-start="20140907T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="38" name="Find relevant journal/studies/etc.. " note="We did a lot of this already, just circle back and ensure thuroughness. " work="36000" duration="187200" start="20140907T000000Z" end="20140910T230000Z" work-start="20140907T080000Z" percent-complete="75" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="must-start-on" time="20140907T000000Z"/>
+          </task>
+          <task id="39" name="Get that data into something sharable with the group" note="This also might exist, just get it into the correct folder." work="0" start="20140907T000000Z" end="20140907T080000Z" work-start="20140907T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <constraint type="must-start-on" time="20140907T000000Z"/>
+          </task>
+        </task>
+        <task id="40" name="Part / Framework Selection" note="" work="0" start="20140910T230000Z" end="20140911T080000Z" work-start="20140911T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="37" type="FS"/>
+          </predecessors>
+          <task id="41" name="Create BOM and fill with possible components" note="Y-sensor&#10;Angle Sensor&#10;etc.." work="0" start="20140910T230000Z" end="20140911T080000Z" work-start="20140911T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="42" name="Collect list of possible components" note="Y-sensor:&#10;-Load cell&#10;-Strain gauge&#10;Angle Sensor:&#10;-Potentiometer&#10;-Accelerometer" work="0" start="20140910T230000Z" end="20140911T080000Z" work-start="20140911T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="43" name="Refine BOM until final parts selected" note="" work="0" start="20140910T230000Z" end="20140911T080000Z" work-start="20140911T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="44" name="Lab Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="45" name="Kit BOM items" note="Get all the parts together, with everything youll need to put them together" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="46" name="Get each piece to work" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="47" name="eg. Y-sensor" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="48" name="Angle Sensor" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="49" name="ADC takes voltage to digital" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="50" name="lil brain take digital to serial" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="51" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="52" name="Address considerations from lab prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="53" name="Polished Solution" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="54" name="Address considerations from deployable prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="55" name="Kinetic Profiling" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="56" name="Research" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="57" name="Find relevant journal/studies/etc.. " note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="58" name="Get that data into something sharable with the group" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="59" name="Part / Framework Selection" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="60" name="Create BOM and fill with possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="61" name="Collect list of possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="62" name="Refine BOM until final parts selected" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="63" name="Lab Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="64" name="Kit BOM items" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="65" name="Get each piece to work" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="66" name="torque sensor" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="67" name="static sensor re-qual" note="If we re-use a sensor we should take the task to prove (or qualify) that it can actually do the thing we think it will. &#10;&#10;This task might take 45 seconds, might take &gt;20h" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="68" name="ADC " note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="69" name="MCU" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="70" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="71" name="Address lab prototype concerns" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="72" name="Polished Solution" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="73" name="Address considerations from deployable prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="74" name="On-The-Go Measurement" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="75" name="Research" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="76" name="Find relevant journal/studies/etc.. " note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="77" name="Get that data into something sharable with the group" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="78" name="Part / Framework Selection" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="79" name="Create BOM and fill with possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="80" name="Collect list of possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="81" name="Refine BOM until final parts selected" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="82" name="Lab Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="83" name="Kit BOM items" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="84" name="Get each piece to work" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="85" name="battery replacement piece #1" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="86" name="battery replacement piece #2" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="87" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="88" name="Address lab prototype concerns" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="89" name="Polished Solution" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="90" name="Address considerations from deployable prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="91" name="Master Controller" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="92" name="Research" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="93" name="Find relevant journal/studies/etc.. " note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="94" name="Get that data into something sharable with the group" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="95" name="Part / Framework Selection" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="96" name="Create BOM and fill with possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="97" name="Collect list of possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="98" name="Refine BOM until final parts selected" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="99" name="Lab Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="100" name="Kit BOM items" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="101" name="Get each piece to work" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="102" name="lil-brain required for management" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="103" name="comm with all other 'brains'" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="104" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="105" name="Address lab prototype concerns" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="106" name="Polished Solution" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="107" name="Address considerations from deployable prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="108" name="Technician Interface" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="109" name="Research" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="110" name="Find relevant journal/studies/etc.. " note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="111" name="Get that data into something sharable with the group" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="112" name="Part / Framework Selection" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="113" name="Create BOM and fill with possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="114" name="Collect list of possible components" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="115" name="Refine BOM until final parts selected" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="116" name="Lab Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="117" name="Kit BOM items" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="118" name="Get each piece to work" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="119" name="button for start/stop" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="120" name="LED that shows start/stop" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="121" name="Deployable Prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="122" name="Address lab prototype concerns" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="123" name="Polished Solution" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="124" name="Address considerations from deployable prototype" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+    </task>
+    <task id="125" name="Meeting with the Client" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="126" name="Brian and John 9/12" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="127" name="Support Personnel Meetings" note="" work="7200" start="20140901T000000Z" end="20140901T100000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="128" name="3D Printer Club Meetings" note="" work="7200" start="20140901T000000Z" end="20140901T100000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="129" name="Week 4" note="" work="7200" start="20140901T000000Z" end="20140901T100000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="130" name="Team Meetings" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="131" name="Week 1-3" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="132" name="Week 4" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="133" name="Week 5" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="134" name="Senior Design Lecture &amp; Lab" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="135" name="Week 1-3" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="136" name="Week 4" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="137" name="Week 5" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="138" name="---  Line Spaces for Doc Readability --" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="139" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="140" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="141" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="142" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="143" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="144" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="145" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="146" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="147" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="148" name="" note="" work="0" start="20140901T000000Z" end="20140901T080000Z" work-start="20140901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
   </tasks>
   <resource-groups/>
   <resources>
@@ -145,6 +310,9 @@
     <resource id="6" name="" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
   </resources>
   <allocations>
+    <allocation task-id="38" resource-id="2" units="10"/>
+    <allocation task-id="38" resource-id="4" units="10"/>
+    <allocation task-id="19" resource-id="5" units="5"/>
     <allocation task-id="7" resource-id="5" units="100"/>
     <allocation task-id="6" resource-id="5" units="0"/>
     <allocation task-id="5" resource-id="5" units="0"/>
