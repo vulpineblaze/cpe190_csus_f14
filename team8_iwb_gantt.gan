@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Wijit LDBS Calibration System" company="CSUS Senior Design S15 Team 8" webLink="http://" view-date="2015-01-18" view-index="0" gantt-divider-location="837" resource-divider-location="300" version="2.7" locale="en_US">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd11" name="Outline number" width="6" order="0"/>
+        <field id="tpd3" name="Name" width="46" order="1"/>
+        <field id="tpd10" name="ID" width="3" order="2"/>
+        <field id="tpc0" name="Status" width="8" order="3"/>
+        <field id="tpd4" name="Begin date" width="8" order="4"/>
+        <field id="tpd5" name="End date" width="7" order="5"/>
+        <field id="tpd6" name="Duration" width="3" order="6"/>
+        <field id="tpd9" name="Predecessors" width="4" order="7"/>
+        <field id="tpc1" name="Assigned" width="6" order="8"/>
+        <field id="tpd7" name="Completion" width="4" order="9"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="50" order="0"/>
+        <field id="1" name="Default role" width="50" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+            <taskproperty id="tpc0" name="Status" type="custom" valuetype="text"/>
+            <taskproperty id="tpc1" name="Assigned" type="custom" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Static Operator Characteristic" color="#000000" meeting="false" start="2014-09-02" duration="44" complete="0" expand="true">
+            <depend id="100" type="2" difference="0" hardness="Strong"/>
+            <depend id="133" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="IP"/>
+            <customproperty taskproperty-id="tpc1" value="JL"/>
+            <task id="6" name="Rotary Position Sensor" meeting="false" start="2014-09-02" duration="24" complete="0" expand="true">
+                <depend id="50" type="2" difference="0" hardness="Strong"/>
+                <customproperty taskproperty-id="tpc0" value="IP"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="10" name="Research" meeting="false" start="2014-09-02" duration="20" complete="0" expand="true">
+                    <depend id="11" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="done"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="11" name="Purchase &amp; Kit" color="#8cb6ce" meeting="false" start="2014-09-22" duration="1" complete="0" expand="true">
+                    <depend id="12" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="ready"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="12" name="Assemble" meeting="false" start="2014-09-23" duration="1" complete="0" expand="true">
+                    <depend id="13" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="JL,AP"/>
+                </task>
+                <task id="13" name="ADC Integration" meeting="false" start="2014-09-24" duration="1" complete="0" expand="true">
+                    <depend id="14" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="14" name="Pass Acceptance Testing" meeting="false" start="2014-09-25" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="7" name="Wijit Handle Sensor" meeting="false" start="2014-09-02" duration="24" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="IP"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="20" name="Research" meeting="false" start="2014-09-02" duration="20" complete="0" expand="true">
+                    <depend id="18" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="done"/>
+                    <customproperty taskproperty-id="tpc1" value="JL,AP"/>
+                </task>
+                <task id="18" name="Purchase &amp; Kit" meeting="false" start="2014-09-22" duration="1" complete="0" expand="true">
+                    <depend id="16" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="ready"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="16" name="Assemble" meeting="false" start="2014-09-23" duration="1" complete="0" expand="true">
+                    <depend id="24" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="24" name="ADC Integration" meeting="false" start="2014-09-24" duration="1" complete="0" expand="true">
+                    <depend id="22" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="22" name="Pass Acceptance Testing" meeting="false" start="2014-09-25" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+            </task>
+            <task id="8" name="Rotational Force Sensor" meeting="false" start="2014-09-02" duration="24" complete="0" expand="true">
+                <depend id="55" type="2" difference="0" hardness="Strong"/>
+                <customproperty taskproperty-id="tpc0" value="IP"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="30" name="Research" meeting="false" start="2014-09-02" duration="20" complete="0" expand="true">
+                    <depend id="28" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="done"/>
+                    <customproperty taskproperty-id="tpc1" value="JL,AP"/>
+                </task>
+                <task id="28" name="Purchase &amp; Kit" meeting="false" start="2014-09-22" duration="1" complete="0" expand="true">
+                    <depend id="26" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="ready"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="26" name="Assemble" meeting="false" start="2014-09-23" duration="1" complete="0" expand="true">
+                    <depend id="34" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="34" name="ADC Integration" meeting="false" start="2014-09-24" duration="1" complete="0" expand="true">
+                    <depend id="32" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="32" name="Pass Acceptance Testing" color="#8cb6ce" meeting="false" start="2014-09-25" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+            </task>
+            <task id="9" name="System Controller" meeting="false" start="2014-09-20" duration="26" complete="0" expand="true">
+                <depend id="59" type="2" difference="0" hardness="Strong"/>
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+                <depend id="137" type="2" difference="0" hardness="Strong"/>
+                <depend id="173" type="2" difference="0" hardness="Strong"/>
+                <customproperty taskproperty-id="tpc0" value="NS"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="188" name="Research" meeting="false" start="2014-09-20" duration="20" complete="0" expand="true">
+                    <depend id="190" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="190" name="Purchase &amp; Kit" meeting="false" start="2014-10-10" duration="1" complete="0" expand="true">
+                    <depend id="191" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="191" name="Assemble" meeting="false" start="2014-10-11" duration="1" complete="0" expand="true">
+                    <depend id="44" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="44" name="Accept digital input from ADC" meeting="false" start="2014-10-12" duration="1" complete="0" expand="true">
+                    <depend id="42" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="42" name="Evaluate input, produce output" meeting="false" start="2014-10-13" duration="1" complete="0" expand="true">
+                    <depend id="40" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="40" name="Get output onto bus" meeting="false" start="2014-10-14" duration="1" complete="0" expand="true">
+                    <depend id="38" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="38" name="Pass Acceptance Testing" meeting="false" start="2014-10-15" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+        </task>
+        <task id="2" name="Kinetic Profiling" meeting="false" start="2014-09-02" duration="46" complete="0" expand="true">
+            <depend id="104" type="2" difference="0" hardness="Strong"/>
+            <depend id="133" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc1" value="AP"/>
+            <task id="45" name="Rotary Position Sensor (re-qual)" meeting="false" start="2014-09-26" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="50" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-09-26" duration="1" complete="0" expand="true">
+                    <depend id="51" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="51" name="Modifiy this component to make it compatible" meeting="false" start="2014-09-27" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="46" name="Rotational Force Sensor (re-qual)" meeting="false" start="2014-09-26" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="55" name="Prove this component is compatible" meeting="false" start="2014-09-26" duration="1" complete="0" expand="true">
+                    <depend id="53" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="53" name="Modifiy this component to make it compatible" meeting="false" start="2014-09-27" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="47" name="System Controller" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="59" name="Prove this component is compatible" meeting="false" start="2014-10-16" duration="1" complete="0" expand="true">
+                    <depend id="57" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="57" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-17" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="48" name="Wijit Position System" meeting="false" start="2014-09-02" duration="5" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="61" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="69" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM,JL"/>
+                </task>
+                <task id="69" name="Purchase &amp; Kit" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="67" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="67" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="65" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL,AP"/>
+                </task>
+                <task id="65" name="DAC Integration" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <depend id="63" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM,AP"/>
+                </task>
+                <task id="63" name="Pass Acceptance Testing" meeting="false" start="2014-09-06" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="49" name="Pressure Mat" meeting="false" start="2014-09-02" duration="5" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="IP"/>
+                <customproperty taskproperty-id="tpc1" value="JG"/>
+                <task id="71" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="79" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="IP"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="79" name="Purchase &amp; Kit" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="77" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="pending"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="77" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="75" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="75" name="ADC Integration" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <depend id="73" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="73" name="Pass Acceptance Testing" meeting="false" start="2014-09-06" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+        </task>
+        <task id="3" name="On-The-Go Measurement" meeting="false" start="2014-09-02" duration="48" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="NS"/>
+            <customproperty taskproperty-id="tpc1" value="EM"/>
+            <task id="93" name="Static Operator Characteristic (re-qual)" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="100" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-10-16" duration="1" complete="0" expand="true">
+                    <depend id="98" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="98" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-17" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="94" name="Kinetic Profiling (re-qual)" meeting="false" start="2014-10-18" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="JL"/>
+                <task id="104" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-10-18" duration="1" complete="0" expand="true">
+                    <depend id="102" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JL"/>
+                </task>
+                <task id="102" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-19" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="95" name="System Controller (re-qual)" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="108" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-10-16" duration="1" complete="0" expand="true">
+                    <depend id="106" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="106" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-17" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+            <task id="96" name="Main Storage" meeting="false" start="2014-09-02" duration="4" complete="0" expand="true">
+                <depend id="141" type="2" difference="0" hardness="Strong"/>
+                <customproperty taskproperty-id="tpc0" value="pending"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="110" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="118" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="118" name="Purchase &amp; Kit" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="116" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="116" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="112" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM,JG"/>
+                </task>
+                <task id="112" name="Pass Acceptance Testing" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM,JG"/>
+                </task>
+            </task>
+        </task>
+        <task id="4" name="Master Controller" meeting="false" start="2014-09-06" duration="46" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="NS"/>
+            <customproperty taskproperty-id="tpc1" value="EM"/>
+            <task id="119" name="Main Controller" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="122" name="System Controller (re-qual)" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                    <task id="137" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-10-16" duration="1" complete="0" expand="true">
+                        <depend id="135" type="2" difference="0" hardness="Strong"/>
+                        <customproperty taskproperty-id="tpc0" value="-"/>
+                        <customproperty taskproperty-id="tpc1" value="JG"/>
+                    </task>
+                    <task id="135" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-17" duration="1" complete="0" expand="true">
+                        <customproperty taskproperty-id="tpc0" value="-"/>
+                        <customproperty taskproperty-id="tpc1" value="EM"/>
+                    </task>
+                </task>
+            </task>
+            <task id="120" name="Main Systen Power" meeting="false" start="2014-10-18" duration="4" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="133" name="Research" meeting="false" start="2014-10-18" duration="1" complete="0" expand="true">
+                    <depend id="129" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="129" name="Purchase &amp; Kit" meeting="false" start="2014-10-19" duration="1" complete="0" expand="true">
+                    <depend id="125" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="125" name="Assemble" meeting="false" start="2014-10-20" duration="1" complete="0" expand="true">
+                    <depend id="127" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+                <task id="127" name="Pass Acceptance Testing" meeting="false" start="2014-10-21" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="AP"/>
+                </task>
+            </task>
+            <task id="121" name="Main Storage (re-qual)" meeting="false" start="2014-09-06" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="141" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-09-06" duration="1" complete="0" expand="true">
+                    <depend id="139" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="139" name="Modifiy this component to make it compatible" meeting="false" start="2014-09-07" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+            </task>
+        </task>
+        <task id="5" name="Technician Interface" meeting="false" start="2014-09-02" duration="46" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="NS"/>
+            <customproperty taskproperty-id="tpc1" value="JG"/>
+            <task id="142" name="Main Input" meeting="false" start="2014-09-02" duration="4" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="JG"/>
+                <task id="147" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="149" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="149" name="Purchase &amp; Ki" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="151" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="151" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="153" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="153" name="Pass Acceptance Testing" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+            <task id="143" name="Main Display" meeting="false" start="2014-09-02" duration="4" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="155" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="157" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="157" name="Purchase &amp; Kit" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="159" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="159" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="161" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="161" name="Pass Acceptance Testing" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+            <task id="144" name="Main Uplink" meeting="false" start="2014-09-02" duration="4" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="JG"/>
+                <task id="163" name="Research" meeting="false" start="2014-09-02" duration="1" complete="0" expand="true">
+                    <depend id="165" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="165" name="Purchase &amp; Kit" meeting="false" start="2014-09-03" duration="1" complete="0" expand="true">
+                    <depend id="167" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="EM"/>
+                </task>
+                <task id="167" name="Assemble" meeting="false" start="2014-09-04" duration="1" complete="0" expand="true">
+                    <depend id="169" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="169" name="Pass Acceptance Testing" meeting="false" start="2014-09-05" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+            <task id="145" name="System Controller (re-qual)" meeting="false" start="2014-10-16" duration="2" complete="0" expand="true">
+                <customproperty taskproperty-id="tpc0" value="-"/>
+                <customproperty taskproperty-id="tpc1" value="EM"/>
+                <task id="173" name="Prove this component is compatible" color="#8cb6ce" meeting="false" start="2014-10-16" duration="1" complete="0" expand="true">
+                    <depend id="171" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="-"/>
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+                <task id="171" name="Modifiy this component to make it compatible" meeting="false" start="2014-10-17" duration="1" complete="0" expand="true">
+                    <customproperty taskproperty-id="tpc1" value="JG"/>
+                </task>
+            </task>
+        </task>
+        <task id="192" name="Test Plan" meeting="false" start="2015-02-09" duration="84" complete="0" expand="true">
+            <task id="193" name="Initial Testing" meeting="false" start="2015-02-09" duration="21" complete="0" expand="true">
+                <depend id="194" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="194" name="Initial Upgrades Testing" meeting="false" start="2015-03-02" duration="21" complete="0" expand="true">
+                <depend id="195" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="195" name="Mid-Semester Upgrade Testing" meeting="false" start="2015-03-23" duration="21" complete="0" expand="true">
+                <depend id="196" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="196" name="Final Testing" meeting="false" start="2015-04-13" duration="21" complete="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="EM" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="JL" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="AP" function="Default:0" contacts="" phone=""/>
+        <resource id="3" name="JG" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="32" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd12" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="0" width="50" visible="true"/>
+        <displaycolumn property-id="tpd3" order="1" width="378" visible="true"/>
+        <displaycolumn property-id="tpd10" order="2" width="27" visible="true"/>
+        <displaycolumn property-id="tpc0" order="3" width="72" visible="true"/>
+        <displaycolumn property-id="tpd4" order="4" width="69" visible="true"/>
+        <displaycolumn property-id="tpd5" order="5" width="61" visible="true"/>
+        <displaycolumn property-id="tpd6" order="6" width="31" visible="true"/>
+        <displaycolumn property-id="tpd9" order="7" width="40" visible="true"/>
+        <displaycolumn property-id="tpc1" order="8" width="54" visible="true"/>
+        <displaycolumn property-id="tpd7" order="9" width="36" visible="true"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

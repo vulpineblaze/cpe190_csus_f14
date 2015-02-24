@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="484.63742"
+   height="306.93747"
+   id="svg93773"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="equerre_non_graduee.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0"
+   inkscape:export-filename="/home/pascal/Documents/Programmation/pylote/pylote/images/instruments/equerre2.png"
+   inkscape:export-xdpi="200"
+   inkscape:export-ydpi="200">
+  <defs
+     id="defs93775">
+    <linearGradient
+       id="linearGradient2900">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2890625;"
+         offset="0"
+         id="stop2902" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop2904" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective93781" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2900"
+       id="linearGradient3641"
+       x1="80.312195"
+       y1="1197.6396"
+       x2="604.57123"
+       y2="1197.6396"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1634871,0,0,1.115818,109.3336,-455.3839)" />
+    <inkscape:perspective
+       id="perspective2722"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2900"
+       id="linearGradient2731"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.6706745,0,0,0.6431963,-45.062636,172.13063)"
+       x1="80.312195"
+       y1="1197.6396"
+       x2="604.57123"
+       y2="1197.6396" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2900"
+       id="linearGradient3745"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.6706745,0,0,0.6431963,-45.062636,172.13063)"
+       x1="80.312195"
+       y1="1197.6396"
+       x2="604.57123"
+       y2="1197.6396" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="380.48397"
+     inkscape:cy="89.277279"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1024"
+     inkscape:window-height="580"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata93778">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.5245024,-742.29822)">
+    <g
+       id="g3741"
+       inkscape:export-filename="/home/pascal/Documents/Programmation/pylote/images/equerre.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100">
+      <path
+         id="path2728"
+         d="M 469.57265,743.29822 C 327.8607,745.30761 178.77622,745.71538 25.541401,743.95447 C 9.4390727,743.95447 9.355851,742.936 6.0726515,746.20447 C 2.7437732,749.51841 2.9164015,751.1144 2.9164015,757.01697 C 2.1369225,854.09071 2.7876171,951.15466 2.6351515,1048.2357 C 163.61371,957.63833 324.3432,866.61782 484.57265,774.70447 C 485.34659,763.59196 485.80812,755.33728 482.9789,749.39197 C 480.55183,744.29175 474.06565,743.55076 469.57265,743.29822 z M 62.697651,805.64197 C 139.43623,806.3182 209.72092,808.66459 331.32265,807.29822 C 204.59383,880.68332 174.10017,893.72169 63.385151,953.89197 C 62.690022,841.2437 62.447604,868.99686 62.697651,805.64197 z"
+         style="fill:#ffff00;fill-opacity:0.76078431;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         id="path2862"
+         d="M 33.724522,1018.4655 C 101.77259,985.98108 98.778375,987.85953 162.48711,958.96401 C 227.27204,921.59316 248.74187,901.44375 262.08769,883.37998 C 267.63033,861.20762 245.22405,857.57072 201.59476,881.83156 C 138.29224,918.349 135.21494,920.17854 94.538161,914.33303 C 44.96446,888.89491 66.708348,857.46795 51.316011,855.05087 C 12.086738,962.41781 17.391831,958.3429 12.166502,1021.0644"
+         style="fill:url(#linearGradient3745);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

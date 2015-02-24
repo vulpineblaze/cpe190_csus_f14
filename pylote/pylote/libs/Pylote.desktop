@@ -1,0 +1,20 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Comment[fr]=
+Comment=
+Exec=/CHEMIN/pylote.pyw
+GenericName[fr]=
+GenericName=
+Icon=/CHEMIN/images/icon.png
+MimeType=
+Name[fr]=Pylote
+Name=Pylote
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

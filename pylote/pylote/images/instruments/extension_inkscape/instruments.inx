@@ -1,0 +1,15 @@
+<inkscape-extension>
+  <_name>Instruments</_name>
+  <id>org.ekips.filter.Instruments</id>
+  <dependency type="executable" location="extensions">instruments.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="Exemples"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">instruments.py</command>
+  </script>
+</inkscape-extension>
