@@ -1,0 +1,38 @@
+#fresh ubuntu 14.04 , 2-24-15
+
+virtualenv ~/virt_env/virt1
+source ~/virt_env/virt1/bin/activate
+
+#download from here: http://www.stepd.ca/gtkwhiteboard/
+
+# doesnt work: sudo apt-get install libbluez2 bluez-firmware bluez-pin bluez-utils python pybluez python-bluetooth python-xlib wxpython
+
+sudo apt-get install  bluez-utils python python-bluez python-xlib 
+
+#sudo add-apt-repository "deb http://apt.wxwidgets.org/ trusty-wx main"
+#sudo apt-get update
+
+sudo apt-get install -y python-wxgtk2.8 python-wxtools wx2.8-i18n wx2.8-doc wx2.8-examples wx2.8-headers python-dev
+
+#apt-get source -d wxwidgets2.8
+#dpkg-source -x wxwidgets2.8_2.8.12.1+dfsg-2ubuntu2.dsc 
+#cd wxwidgets2.8-2.8.12.1+dfsg/wxPython
+###python setup.py sdist
+#sudo python setup.py install
+
+
+#pip install dist/wxPython-2.8.12.1.tar.gz 
+
+
+
+##################################  java version ############################
+
+#download from: http://www.uweschmidt.org/wiimote-whiteboard
+
+sudo apt-get install -y openjdk-7-jdk
+
+#problem with bluetooth stack 
+sudo apt-get install bluez-tools blueman xwiimote libbz2-dev 
+
+## !!!  Now gtkwhiteboard works and I can draw ?! 
+# i also forgot to do my virtualenv ^^ 

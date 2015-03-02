@@ -1,0 +1,7 @@
+#fresh ubuntu 14.04 , 2-24-15
+
+sudo apt-get install ardesia
+
+#it just works
+#screen focus:
+# ardesia -g south -d -t 50
