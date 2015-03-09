@@ -13,12 +13,20 @@ Adafruit Arduino - Lesson 3. RGB LED
 //int greenPin = 8;
 //int bluePin = 5;
 //int sensor = A2;
+
+/*
 int IR = 10;
 int button = A3;
 int proxOut = 1;
 int yellowLED = 9;
 int redLED = 6;
 int toggle_switch = 0;
+*/
+int drawingIROut = 10; // IR
+int yellowOnLED = 9; // yellowLED
+int proxInSensor = A3;// button
+int proxOutLED = 1; // proxOut
+
 
 
 int sensorvalue = 0;
@@ -118,18 +126,18 @@ void setup()
   //pinMode(greenPin, OUTPUT);
   //pinMode(bluePin, OUTPUT);
   //pinMode(sensor, INPUT);  
-  pinMode(IR,OUTPUT);
-  pinMode(proxOut,OUTPUT);
-  pinMode(button,INPUT);
-  pinMode(yellowLED,OUTPUT);
-  pinMode(redLED,OUTPUT);
-  pinMode(toggle_switch,INPUT);
+  pinMode(drawingIROut,OUTPUT);
+  pinMode(proxOutLED,OUTPUT);
+  pinMode(proxInSensor,INPUT);
+  pinMode(yellowOnLED,OUTPUT);
+  //pinMode(redLED,OUTPUT);
+  //pinMode(toggle_switch,INPUT);
   
   //set everything to zero/low
-  digitalWrite(redLED, LOW);
-  digitalWrite(yellowLED, LOW);
-  digitalWrite(IR, LOW);
-  digitalWrite(proxOut,LOW);
+  //digitalWrite(redLED, LOW);
+  digitalWrite(yellowOnLED, LOW);
+  digitalWrite(drawingIROut, LOW); // IR
+  digitalWrite(proxOutLED,LOW);
 
   //analogWrite(redPin, 0);
   //analogWrite(greenPin, 0);
@@ -173,10 +181,10 @@ void proxBlink(int buttonstate, unsigned long timer){
   }
 
   if(speed_up_bool && current_redLED_status==0){
-    digitalWrite(redLED, HIGH);
+    //digitalWrite(redLED, HIGH);
     current_redLED_status = 1;
   }else if(!speed_up_bool && current_redLED_status==1){
-    digitalWrite(redLED, LOW);
+    //digitalWrite(redLED, LOW);
     current_redLED_status = 0;
   }
   if(current_redLED_status != last_redLED_status){
@@ -187,14 +195,14 @@ void proxBlink(int buttonstate, unsigned long timer){
       }
   
       if(!current_yellowLED_status && ((timer-yellow_time)<yellow_delay_time)){
-        digitalWrite(yellowLED, HIGH);
+        digitalWrite(yellowOnLED, HIGH);
         current_yellowLED_status = 1;
         flag_buttonstate = 1;
       }
     }
   }
   if(current_yellowLED_status && ((timer-yellow_time)>=yellow_delay_time)){
-    digitalWrite(yellowLED, LOW);
+    digitalWrite(yellowOnLED, LOW);
     current_yellowLED_status = 0;
     yellow_time = 0;
   }
@@ -211,17 +219,17 @@ void proxBlink(int buttonstate, unsigned long timer){
         prox_cnt--;
       }
     }
-    digitalWrite(proxOut, HIGH);
+    digitalWrite(proxOutLED, HIGH);
     current_prox_status = 1;
   }
   
   
   else if(lhs >= rhs){
-    digitalWrite(proxOut, LOW);
+    digitalWrite(proxOutLED, LOW);
     current_prox_status = 0;
   }
   else{
-    digitalWrite(proxOut, LOW);
+    digitalWrite(proxOutLED, LOW);
     current_prox_status = 0;
     //prox_timer = timer;
   }
@@ -256,11 +264,11 @@ void dataBlink(int colorstate, int buttonstate){
 
 
     if(timer % burst_rate < burst_rate / 2 && current_IR_status == 0){
-      digitalWrite(IR, HIGH);
+      digitalWrite(drawingIROut, HIGH);
       current_IR_status = 1;
     }
     else if(timer % burst_rate < burst_rate && current_IR_status == 1){
-      digitalWrite(IR, LOW);
+      digitalWrite(drawingIROut, LOW);
       current_IR_status = 0;
     }
     else{
@@ -271,7 +279,7 @@ void dataBlink(int colorstate, int buttonstate){
       flag_buttonstate = 0;
       data_count = 0;
       start_time = 0;
-      digitalWrite(IR, LOW);
+      digitalWrite(drawingIROut, LOW);
       current_IR_status = 0;
     }
   }
@@ -281,13 +289,13 @@ void dataBlink(int colorstate, int buttonstate){
     }
 
     if(timer % burst_rate < burst_rate / 2 && current_IR_status == 0){
-      digitalWrite(IR, HIGH);
+      digitalWrite(drawingIROut, HIGH);
       current_IR_status = 1;
     }
     else if(timer % burst_rate < burst_rate 
       && timer % burst_rate > burst_rate / 2 
       && current_IR_status == 1){
-      digitalWrite(IR, LOW);
+      digitalWrite(drawingIROut, LOW);
       current_IR_status = 0;
     }
     else{
@@ -298,7 +306,7 @@ void dataBlink(int colorstate, int buttonstate){
       flag_colorstate = 0;
       //data_count = 0;
       start_time = 0;
-      digitalWrite(IR, LOW);
+      digitalWrite(drawingIROut, LOW);
       current_IR_status = 0;
     }
   }
@@ -312,7 +320,7 @@ bool poll_prox_button(){
 
 
   // for cool pen
-  float button_analog = analogRead(button); //goes high when lit
+  float button_analog = analogRead(proxInSensor); //goes high when lit
     
   button_analog_threshold = 890.0; //move to top after debug
                                   //if too low, stays on
