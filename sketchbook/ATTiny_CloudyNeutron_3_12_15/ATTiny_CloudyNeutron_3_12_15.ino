@@ -3,11 +3,23 @@ Adafruit Arduino - Lesson 3. RGB LED
  */
 
 
+
+//uncomment this line if using a Common Anode LED
+//#define COMMON_ANODE
+
+
+
+
+
+
 int drawingIROut = 10; // IR
 int yellowOnLED = 9; // yellowLED
 int proxInSensor = A3;// button
 int proxOutLED = 1; // proxOut
-
+int colorWheelPOT = A2 // sensor
+int RBGLED_redPin = 7; 
+int RBGLED_greenPin = 8;
+int RBGLED_bluePin = 5;
 
 
 
@@ -64,8 +76,9 @@ bool IR_draw_state =0;
 bool last_IR_draw_state =0;
 unsigned long IR_draw_timer =0.0;
 
-
-
+int color_dead_zone = 10; //creates dead zone in pot double this number
+int color_multiple = 128; //true for vcc=5VDC
+int colorstate = 0;       // state of the current output color
 
 
 
@@ -92,6 +105,10 @@ void setup()
   pinMode(proxOutLED,OUTPUT);
   pinMode(proxInSensor,INPUT);
   pinMode(yellowOnLED,OUTPUT);
+  pinMode(colorWheelPOT, INPUT);  
+  pinMode(RBGLED_redPin, OUTPUT);
+  pinMode(RBGLED_greenPin, OUTPUT);
+  pinMode(RBGLED_bluePin, OUTPUT);
 
 
   //set everything to zero/low
@@ -99,8 +116,73 @@ void setup()
   digitalWrite(drawingIROut, LOW); // IR
   digitalWrite(proxOutLED,LOW);
 
+  analogWrite(RBGLED_redPin, 0);
+  analogWrite(RBGLED_greenPin, 0);
+  analogWrite(RBGLED_bluePin, 0); 
 
 }
+
+
+
+
+void setColor(int red, int green, int blue)
+{
+#ifdef COMMON_ANODE
+  red = 255 - red;
+  green = 255 - green;
+  blue = 255 - blue;
+#endif
+  analogWrite(RBGLED_redPin, red);
+  analogWrite(RBGLED_greenPin, green);
+  analogWrite(RBGLED_bluePin, blue);  
+}
+
+
+
+
+int setRBG(int colorWheelPOT_analog,int colorstate){
+
+  
+  if (colorWheelPOT_analog < color_multiple-color_dead_zone){
+    setColor(0, 255, 0);  // red
+    colorstate = 1;
+  }
+  else if (colorWheelPOT_analog >= color_multiple + color_dead_zone && colorWheelPOT_analog < color_multiple*2 - color_dead_zone){
+    setColor(100,50,255); //red
+    colorstate = 2;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*2 + color_dead_zone && colorWheelPOT_analog < color_multiple*3 - color_dead_zone){
+    setColor(120, 10, 255);  // yellow  
+    colorstate = 3;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*3 + color_dead_zone && colorWheelPOT_analog < color_multiple*4 - color_dead_zone){
+    setColor(255, 0, 255);  // green
+    colorstate = 4;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*4 + color_dead_zone && colorWheelPOT_analog < color_multiple*5 - color_dead_zone){
+    setColor(255, 255, 0);  // blue
+    colorstate = 5;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*5 + color_dead_zone && colorWheelPOT_analog < color_multiple*6 - color_dead_zone){
+    setColor(200, 255, 0);  // purple
+    colorstate = 6;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*6 + color_dead_zone && colorWheelPOT_analog < color_multiple*7 - color_dead_zone){
+    setColor(180, 50, 100);  // white
+    colorstate = 7;
+  }
+  else if (colorWheelPOT_analog >= color_multiple*7 + color_dead_zone ){
+    setColor(255, 255, 255);  // black
+    colorstate = 8;
+  }  
+  return colorstate;
+}
+
+
+
+
+
+
 
 
 long readVcc() {
@@ -301,7 +383,10 @@ void loop()
   if(blink_number){
     dataBlink(prox_input_state, blink_number);
   }
-
+  
+  // get colorwheel and do color changing
+  colorWheelPOT_analog = analogRead(colorWheelPOT);
+  colorstate = setRBG(colorWheelPOT_analog,colorstate);
 
 }
 
