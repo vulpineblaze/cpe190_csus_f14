@@ -20,6 +20,10 @@ int RBGLED_bluePin = 7;
 int RBGLED_redPin = 6; 
 int RBGLED_greenPin = 5;
 
+int button_1 = 10;
+int button_2 = 0;
+int button_3 = 1;
+
 /*
 int drawingIROut = 10; // IR
 int yellowOnLED = 9; // yellowLED
@@ -47,8 +51,11 @@ unsigned long prox_millis = 40.0 * micro_convert;
 unsigned long prox_off_time = 400.0 * micro_convert;
 unsigned long prox_speed_up = 250.0 * micro_convert;
 
+float prox_input_analog = 0.0;
 
 bool speed_up_bool = false;
+
+int prox_duty_cycle = 130 ; //out of 255
 
 int prox_cnt=0;
 int prox_threshold_high = 2; //when button seen > this, fast mode
@@ -94,6 +101,7 @@ int colorWheelPOT_analog =0;
 
 int setRBG(int, int);
 void proxBlink(int,unsigned long);
+void proxPWMBlink(int,unsigned long);
 
 void dataBlink(int,int);
 void fast_mode_check(bool);
@@ -101,7 +109,7 @@ void IR_output_toggle(bool);
 
 bool poll_prox_input();
 
-
+void set_prox_threshold();
 
 
 
@@ -130,6 +138,11 @@ void setup()
   analogWrite(RBGLED_redPin, 0);
   analogWrite(RBGLED_greenPin, 0);
   analogWrite(RBGLED_bluePin, 0); 
+  
+  //pullup button setup
+  pinMode(button_1, INPUT);
+  digitalWrite(button_1, HIGH);
+  pinMode(button_1, INPUT_PULLUP);
 
 }
 
@@ -216,6 +229,34 @@ long readVcc() {
  result = 1126400L / result; // Back-calculate AVcc in mV
  return result;
 }
+
+
+
+void proxPWMBlink(int prox_input_state, unsigned long timer){
+  analogWrite(proxOutLED, colorWheelPOT_analog);
+  //if(RUNNING_UNO){Serial.print(colorWheelPOT_analog);Serial.print("\t|PWM|\t");Serial.print(digitalRead(proxOutLED));Serial.print("\t|\t");Serial.println(prox_input_analog);}
+
+  /*
+  pinMode(proxOutLED, OUTPUT);
+  TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
+  OCR2A = prox_duty_cycle;
+  */
+  /*
+  pinMode(proxOutLED, OUTPUT);
+//  pinMode(11, OUTPUT);
+  TCCR2A = _BV(COM2A0) | _BV(COM2B1) | _BV(WGM21) | _BV(WGM20);
+  TCCR2B = _BV(WGM22) | _BV(CS22);
+  OCR2A = 180;
+  OCR2B = 170;
+  */
+}
+
+
+
+
+
+
+
 
 
 
@@ -333,7 +374,7 @@ void dataBlink(int prox_input_state, int blink_number){
 bool poll_prox_input(){
   bool decision = prox_input_state;
   
-  float prox_input_analog = analogRead(proxInSensor); //goes high when lit
+  prox_input_analog = analogRead(proxInSensor); //goes high when lit
     
 
   if(prox_input_analog > prox_input_analog_threshold){ //sees light
@@ -376,6 +417,20 @@ void IR_output_toggle(bool prox_input_state){
 
 
 
+void set_prox_threshold(){
+  if(digitalRead(button_1)){
+    
+  }else{
+    prox_input_analog_threshold = analogRead(proxInSensor)+20.0;
+  }
+  if(RUNNING_UNO){Serial.print(prox_input_analog_threshold);Serial.print("\t|cal|\t");Serial.println(digitalRead(button_1));}
+
+}
+
+
+
+
+
 
 
 
@@ -398,6 +453,7 @@ void loop()
 
   // blinks prox_out_LED, turns on yellow_LED when in prox
   proxBlink(prox_input_state, timer);
+  proxPWMBlink(prox_input_state, timer);
   
   // blinks IR for events
   if(blink_number){
@@ -407,6 +463,9 @@ void loop()
   // get colorwheel and do color changing
   colorWheelPOT_analog = analogRead(colorWheelPOT);
   colorstate = setRBG(colorWheelPOT_analog,colorstate);
+  
+  //set the threshold maunally with cal button
+  set_prox_threshold();
 
 }
 
