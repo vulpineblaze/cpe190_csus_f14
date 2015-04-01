@@ -9,6 +9,7 @@ Adafruit Arduino - Lesson 3. RGB LED
 
 bool RUNNING_UNO = 1; // debug mode for running uno
 
+int proxOutReader = 13;
 
 int drawingIROut = 9; // IR
 int yellowOnLED = 3; // yellowLED
@@ -53,13 +54,21 @@ unsigned long prox_off_time = 400.0 * micro_convert;
 unsigned long prox_speed_up = 250.0 * micro_convert;
 
 float prox_input_analog = 0.0;
+float prox_input_analog_lit = 0.0;
+float prox_input_analog_unlit = 0.0;
 float last_prox_input_analog = 0.0;
+float last_prox_input_analog_lit = 0.0;
+float last_prox_input_analog_unlit = 0.0;
 float running_avg_prox_input_analog = 320.0;
 float running_diff_prox_input_analog = 0.0;
 
+float on_off_diff_value = 0.0;
+
+float last_timer = 0.0;
+
 bool speed_up_bool = false;
 
-int prox_duty_cycle = 1 ; //out of 255
+int prox_duty_cycle = 130 ; //out of 255
 
 int prox_cnt=0;
 int prox_threshold_high = 2; //when button seen > this, fast mode
@@ -125,6 +134,7 @@ void setup()
  
   if(RUNNING_UNO){Serial.begin(9600);}
 
+  pinMode(proxOutReader,INPUT);
   pinMode(drawingIROut,OUTPUT);
   pinMode(proxOutLED,OUTPUT);
   pinMode(proxInSensor,INPUT);
@@ -228,105 +238,15 @@ int setRBG(int colorWheelPOT_analog,int colorstate){
 
 
 
+
 void proxPWMBlink(int prox_input_state, unsigned long timer){
   analogWrite(proxOutLED, prox_duty_cycle);
-  
-  /*
-  if(RUNNING_UNO){
-    Serial.print(prox_input_analog_threshold);
-    Serial.print("\t|PWM|\t");
-    Serial.print(running_avg_prox_input_analog);
-    Serial.print("\t|\t");
-    Serial.print(running_diff_prox_input_analog);
-    Serial.print("\t|\t");
-    Serial.println(prox_input_analog);
-  }
-  */
 
 }
 
 
 
 
-
-
-
-
-
-/*
-void proxBlink(int prox_input_state, unsigned long timer){
-
-
-  unsigned long lhs = (timer % (prox_millis+prox_off_time-(prox_speed_up*speed_up_bool))) ;
-  unsigned long rhs = prox_millis ;
-
-
-
-
-  if((prox_cnt > prox_threshold_high) ){
-    speed_up_bool = true;
-  }
-  else if((prox_cnt < prox_threshold_low) ){
-    speed_up_bool = false;
-  }
-
-  if(speed_up_bool && prox_input_flag==0){
-    //digitalWrite(redLED, HIGH);
-    prox_input_flag = 1;
-  }else if(!speed_up_bool && prox_input_flag==1){
-    //digitalWrite(redLED, LOW);
-    prox_input_flag = 0;
-  }
-  if(prox_input_flag != last_prox_input_flag){
-    last_prox_input_flag = prox_input_flag;
-    if(prox_input_flag){
-      if(yellow_time == 0){
-        yellow_time = timer;
-      }
-  
-      if(!current_yellowLED_status && ((timer-yellow_time)<yellow_delay_time)){
-        digitalWrite(yellowOnLED, HIGH);
-        current_yellowLED_status = 1;
-        flag_prox_input_state = 1;
-      }
-    }
-  }
-  if(current_yellowLED_status && ((timer-yellow_time)>=yellow_delay_time)){
-    digitalWrite(yellowOnLED, LOW);
-    current_yellowLED_status = 0;
-    yellow_time = 0;
-  }
-  
-
-  if(lhs < rhs ){
-    if(prox_input_state){
-      if(prox_cnt <= prox_threshold_high){
-        prox_cnt++;
-      }
-    }
-    else if(!prox_input_state ){
-      if(prox_cnt >= prox_threshold_low){
-        prox_cnt--;
-      }
-    }
-    digitalWrite(proxOutLED, HIGH);
-    current_prox_status = 1;
-  }
-  
-  
-  else if(lhs >= rhs){
-    digitalWrite(proxOutLED, LOW);
-    current_prox_status = 0;
-  }
-  else{
-    digitalWrite(proxOutLED, LOW);
-    current_prox_status = 0;
-    //prox_timer = timer;
-  }
-
-
-}
-*/
 
 
 void dataBlink(int prox_input_state, int blink_number){
@@ -365,28 +285,61 @@ void dataBlink(int prox_input_state, int blink_number){
 
 
 
-bool poll_prox_input(){
+
+bool poll_prox_input_reader(){
   bool decision = prox_input_state;
   
   prox_input_analog = analogRead(proxInSensor); //goes high when lit
+  bool isProxOutOn = digitalRead(proxOutReader);
   
-  float temp_diff = prox_input_analog-last_prox_input_analog;
-  running_diff_prox_input_analog = (19*running_diff_prox_input_analog + abs(temp_diff))/20;
-    
-  //checks the difference between this blink and last blink
-  if(temp_diff > prox_input_analog_threshold){ //sees light
-    decision = true; // we have artificially bright conditions when this occurs
-  }else{ //sees dark
+  if(isProxOutOn){
+    prox_input_analog_lit = prox_input_analog;
+  }else{
+    prox_input_analog_unlit = prox_input_analog;
+  }
+  
+  on_off_diff_value = prox_input_analog_lit - prox_input_analog_unlit;
+  
+  if(on_off_diff_value > prox_input_analog_threshold){
+    decision = true;
+  }else{
     decision = false;
   }
 
   last_prox_input_analog = prox_input_analog;
+  last_prox_input_analog_lit = prox_input_analog_lit;
+  last_prox_input_analog_unlit = prox_input_analog_unlit;
 
+  if(RUNNING_UNO){
+    Serial.print(prox_input_analog_threshold);
+    Serial.print("\t|prox|\t");
+    Serial.print(timer-last_timer);
+    Serial.print("|\t");
+    Serial.print(isProxOutOn);
+    Serial.print("|\t");
+    Serial.print(decision);
+    Serial.print("|\t");
+    Serial.print(on_off_diff_value);
+    Serial.print("|\t");
+    Serial.print(prox_input_analog_lit);
+    Serial.print("|\t");
+    Serial.print(prox_input_analog_unlit);    
+    Serial.print("|\t");
+    Serial.println(prox_input_analog);
+  }
   
-
-  if(RUNNING_UNO){Serial.print(prox_input_analog_threshold);Serial.print("\t|prox|\t");Serial.print(running_diff_prox_input_analog);Serial.print("\t|\t");Serial.print(temp_diff);Serial.print("\t|\t");Serial.println(prox_input_analog);}
+  last_timer = timer;
+  
   return decision;
+  
 }
+
+
+
+
+
+
+
 
 
 
@@ -420,7 +373,9 @@ void IR_output_toggle(bool prox_input_state){
 
 
 
-void set_prox_threshold(){
+
+
+void set_prox_threshold_reader(){
   
   // if the set-threshold button goes low, it is pressed
   if(digitalRead(button_1)){
@@ -429,13 +384,14 @@ void set_prox_threshold(){
     
     // make sure the proxOUT is on, then set calibrate
 
-    prox_input_analog_threshold = running_diff_prox_input_analog;
+    prox_input_analog_threshold = on_off_diff_value;
 
     
   }
   //if(RUNNING_UNO){Serial.print(prox_input_analog_threshold);Serial.print("\t|cal|\t");Serial.println(digitalRead(button_1));}
 
 }
+
 
 
 
@@ -505,9 +461,10 @@ void loop()
   timer = micros();
 
   // finds if there's proximity to surface
-  prox_input_state = poll_prox_input();
+//  prox_input_state = poll_prox_input();
+  prox_input_state = poll_prox_input_reader();
   
-  IR_output_toggle(prox_input_state);
+  //IR_output_toggle(prox_input_state);
 
   // blinks prox_out_LED, turns on yellow_LED when in prox
   //proxBlink(prox_input_state, timer);
@@ -519,14 +476,19 @@ void loop()
   }
   
   // get colorwheel and do color changing
-  colorWheelPOT_analog = analogRead(colorWheelPOT);
-  colorstate = setRBG(colorWheelPOT_analog,colorstate);
+  //colorWheelPOT_analog = analogRead(colorWheelPOT);
+  //colorstate = setRBG(colorWheelPOT_analog,colorstate);
   
   //set the threshold maunally with cal button
+//  set_prox_threshold_reader();
   set_prox_threshold();
   
   //yellow indicator LED
   yellow_indicator_toggle();
+  
+  
+  //if(RUNNING_UNO){Serial.print(prox_input_analog_threshold);Serial.print("\t|prox|\t");Serial.print(running_diff_prox_input_analog);Serial.print("\t|\t");Serial.println(prox_input_analog);}
+
 
 }
 
