@@ -65,10 +65,19 @@ float running_diff_prox_input_analog = 0.0;
 float on_off_diff_value = 0.0;
 
 float last_timer = 0.0;
+float start_test_timer = 0.0;
+float end_test_timer = 0.0;
+float edge_margin_timer = 0.0;
+bool last_isProxOutOn = 0;
+
+int toggle_tally = 0;
+
+int edge_margin_micros = 130;
+float measured_pwm_freq = 1000.0;
 
 bool speed_up_bool = false;
 
-int prox_duty_cycle = 130 ; //out of 255
+int prox_duty_cycle = 65 ; //out of 255
 
 int prox_cnt=0;
 int prox_threshold_high = 2; //when button seen > this, fast mode
@@ -111,6 +120,9 @@ int colorstate = 0;       // state of the current output color
 
 int colorWheelPOT_analog =0;
 
+float colorwheel_timer = 0.0;
+int colorwheel_delay_millis = 200 * micro_convert;
+
 
 int setRBG(int, int);
 void proxBlink(int,unsigned long);
@@ -122,7 +134,6 @@ void IR_output_toggle(bool);
 
 bool poll_prox_input();
 
-void set_prox_threshold();
 void yellow_indicator_toggle();
 
 
@@ -132,7 +143,7 @@ void setup()
 {
 
  
-  if(RUNNING_UNO){Serial.begin(9600);}
+  if(RUNNING_UNO){Serial.begin(115200);}
 
   pinMode(proxOutReader,INPUT);
   pinMode(drawingIROut,OUTPUT);
@@ -289,46 +300,68 @@ void dataBlink(int prox_input_state, int blink_number){
 bool poll_prox_input_reader(){
   bool decision = prox_input_state;
   
-  prox_input_analog = analogRead(proxInSensor); //goes high when lit
   bool isProxOutOn = digitalRead(proxOutReader);
   
-  if(isProxOutOn){
-    prox_input_analog_lit = prox_input_analog;
-  }else{
-    prox_input_analog_unlit = prox_input_analog;
+  if(last_isProxOutOn != isProxOutOn){
+    edge_margin_timer = timer;
+    last_timer = timer;
+    last_isProxOutOn = isProxOutOn;
   }
   
-  on_off_diff_value = prox_input_analog_lit - prox_input_analog_unlit;
-  
-  if(on_off_diff_value > prox_input_analog_threshold){
-    decision = true;
-  }else{
-    decision = false;
-  }
+  if(edge_margin_timer != 0){
+    if(timer - edge_margin_timer > edge_margin_micros ){ 
+      
+      prox_input_analog = analogRead(proxInSensor); //goes high when lit
+      //colorWheelPOT_analog = analogRead(colorWheelPOT);
 
-  last_prox_input_analog = prox_input_analog;
-  last_prox_input_analog_lit = prox_input_analog_lit;
-  last_prox_input_analog_unlit = prox_input_analog_unlit;
+  
+      if(isProxOutOn){
+        prox_input_analog_lit = prox_input_analog;
+      }else{
+        prox_input_analog_unlit = prox_input_analog;
+      }
+      
+      on_off_diff_value = prox_input_analog_lit - prox_input_analog_unlit;
+      
+      if(on_off_diff_value > prox_input_analog_threshold){
+        decision = true;
+      }else{
+        decision = false;
+      }
+    
+    
+//      last_prox_input_analog = prox_input_analog;
+//      last_prox_input_analog_lit = prox_input_analog_lit;
+//      last_prox_input_analog_unlit = prox_input_analog_unlit;
 
-  if(RUNNING_UNO){
-    Serial.print(prox_input_analog_threshold);
-    Serial.print("\t|prox|\t");
-    Serial.print(timer-last_timer);
-    Serial.print("|\t");
-    Serial.print(isProxOutOn);
-    Serial.print("|\t");
-    Serial.print(decision);
-    Serial.print("|\t");
-    Serial.print(on_off_diff_value);
-    Serial.print("|\t");
-    Serial.print(prox_input_analog_lit);
-    Serial.print("|\t");
-    Serial.print(prox_input_analog_unlit);    
-    Serial.print("|\t");
-    Serial.println(prox_input_analog);
+      
+      toggle_tally += 1;
+      
+      if(RUNNING_UNO && toggle_tally > 20 ){
+        toggle_tally = 0;
+        Serial.print(prox_input_analog_threshold);
+        Serial.print("\t|prox|\t");
+        Serial.print(timer-edge_margin_timer);
+        Serial.print("\t|\t");
+        Serial.print(isProxOutOn);
+        Serial.print("|\t");
+        Serial.print(decision);
+        Serial.print("|\t");
+        Serial.print(on_off_diff_value);
+        Serial.print("|\t");
+        Serial.print(prox_input_analog_lit);
+        Serial.print("|\t");
+        Serial.print(prox_input_analog_unlit);    
+        Serial.print("|\t");
+        Serial.println(prox_input_analog);
+        //Serial.println(timer-last_timer);
+      }
+      
+      
+      edge_margin_timer = 0;
+    }
   }
   
-  last_timer = timer;
   
   return decision;
   
@@ -384,7 +417,12 @@ void set_prox_threshold_reader(){
     
     // make sure the proxOUT is on, then set calibrate
 
-    prox_input_analog_threshold = on_off_diff_value;
+    if(on_off_diff_value > 0){
+      prox_input_analog_threshold = on_off_diff_value;
+    }else{
+      prox_input_analog_threshold = 0;
+    }
+    
 
     
   }
@@ -464,7 +502,7 @@ void loop()
 //  prox_input_state = poll_prox_input();
   prox_input_state = poll_prox_input_reader();
   
-  //IR_output_toggle(prox_input_state);
+  IR_output_toggle(prox_input_state);
 
   // blinks prox_out_LED, turns on yellow_LED when in prox
   //proxBlink(prox_input_state, timer);
@@ -476,12 +514,15 @@ void loop()
   }
   
   // get colorwheel and do color changing
-  //colorWheelPOT_analog = analogRead(colorWheelPOT);
+  if(timer - colorwheel_timer > colorwheel_delay_millis){
+    colorwheel_timer = timer;
+    //colorWheelPOT_analog = analogRead(colorWheelPOT);
+  }
   //colorstate = setRBG(colorWheelPOT_analog,colorstate);
   
   //set the threshold maunally with cal button
-//  set_prox_threshold_reader();
-  set_prox_threshold();
+  set_prox_threshold_reader();
+  //set_prox_threshold();
   
   //yellow indicator LED
   yellow_indicator_toggle();
