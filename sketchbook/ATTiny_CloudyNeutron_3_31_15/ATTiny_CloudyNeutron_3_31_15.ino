@@ -172,7 +172,7 @@ void setColor(int red, int green, int blue)
 
 int setRBG(int colorWheelPOT_analog,int colorstate){
 
-  if(RUNNING_UNO){Serial.print(colorWheelPOT_analog);Serial.print("\t|\t");Serial.println(colorstate);}
+  //if(RUNNING_UNO){Serial.print(colorWheelPOT_analog);Serial.print("\t|\t");Serial.println(colorstate);}
 
   if (colorstate !=1 && colorWheelPOT_analog < color_multiple-color_dead_zone){
     setColor(255, 0, 0);  // red
@@ -371,10 +371,10 @@ bool poll_prox_input(){
   prox_input_analog = analogRead(proxInSensor); //goes high when lit
   
   float temp_diff = prox_input_analog-last_prox_input_analog;
-  running_diff_prox_input_analog = (19*running_diff_prox_input_analog + abs(prox_input_analog-last_prox_input_analog))/20;
+  running_diff_prox_input_analog = (19*running_diff_prox_input_analog + abs(temp_diff))/20;
     
   //checks the difference between this blink and last blink
-  if(prox_input_analog-last_prox_input_analog > prox_input_analog_threshold){ //sees light
+  if(temp_diff > prox_input_analog_threshold){ //sees light
     decision = true; // we have artificially bright conditions when this occurs
   }else{ //sees dark
     decision = false;
@@ -384,7 +384,7 @@ bool poll_prox_input(){
 
   
 
-  //if(RUNNING_UNO){Serial.print(prox_input_analog);Serial.print("\t|prox|\t");Serial.println(decision);}
+  if(RUNNING_UNO){Serial.print(prox_input_analog_threshold);Serial.print("\t|prox|\t");Serial.print(running_diff_prox_input_analog);Serial.print("\t|\t");Serial.print(temp_diff);Serial.print("\t|\t");Serial.println(prox_input_analog);}
   return decision;
 }
 
