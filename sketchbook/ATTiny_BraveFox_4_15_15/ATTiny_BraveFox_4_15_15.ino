@@ -9,23 +9,23 @@ Adafruit Arduino - Lesson 3. RGB LED
 
 bool RUNNING_UNO = 1; // debug mode for running uno
 
-int proxOutReader = 0;
+int proxOutReader = 6;
 
-int analogDebugOutput = 1;
+int analogDebugOutput = A1;
 
 int drawingIROut = 9; // IR
 int yellowOnLED = 3; // yellowLED
 int proxInSensor = A4;// button
 int proxOutLED = 5; // proxOut
-int colorWheelPOT = A2; // sensor
+//int colorWheelPOT = A2; // sensor
 
-int RBGLED_bluePin = 8;
-int RBGLED_redPin = 6; 
-int RBGLED_greenPin = 7;
+//int RBGLED_bluePin = 8;
+//int RBGLED_redPin = 6; 
+//int RBGLED_greenPin = 7;
 
 int button_1 = 10;
-int button_2 = 0;
-int button_3 = 1;
+//int button_2 = 0;
+//int button_3 = 1;
 
 
 /*
@@ -153,10 +153,10 @@ void setup()
   pinMode(proxOutLED,OUTPUT);
   pinMode(proxInSensor,INPUT);
   pinMode(yellowOnLED,OUTPUT);
-  pinMode(colorWheelPOT, INPUT);  
-  pinMode(RBGLED_redPin, OUTPUT);
-  pinMode(RBGLED_greenPin, OUTPUT);
-  pinMode(RBGLED_bluePin, OUTPUT);
+//  pinMode(colorWheelPOT, INPUT);  
+//  pinMode(RBGLED_redPin, OUTPUT);
+//  pinMode(RBGLED_greenPin, OUTPUT);
+//  pinMode(RBGLED_bluePin, OUTPUT);
 
 
   //set everything to zero/low
@@ -166,10 +166,10 @@ void setup()
   analogWrite(proxOutLED,LOW);
   analogWrite(analogDebugOutput,LOW);
   
-
-  analogWrite(RBGLED_redPin, 0);
-  analogWrite(RBGLED_greenPin, 0);
-  analogWrite(RBGLED_bluePin, 0); 
+//
+//  analogWrite(RBGLED_redPin, 0);
+//  analogWrite(RBGLED_greenPin, 0);
+//  analogWrite(RBGLED_bluePin, 0); 
   
   //pullup button setup
   pinMode(button_1, INPUT);
