@@ -1,0 +1,24 @@
+CTRL+SHIFT+ALT+
+
+buttonThick		k
+buttonMode		m
+buttonUndo		premade, CTRL+u
+buttonRedo		premade, CTRL+y
+buttonFiller		f	
+buttonClear		c
+buttonPointer		n
+buttonArrow		o
+buttonText		t
+buttonHighlighter	h
+buttonEraser		e
+buttonPencil		p
+buttonBlue		b
+buttonLightGreen	g
+buttonYellow		y
+buttonRed		r
+buttonWhite		w
+buttonScreenShoot	s
+buttonAddPdf		a
+buttonRecorder		r
+buttonQuit		premade, CTRL+q
+

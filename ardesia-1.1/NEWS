@@ -1,0 +1,375 @@
+Ardesia free digital sketchpad
+
+---------------
+ ardesia 1.2
+---------------
+
+Internationalization:
+- Add german support made from Ronny Standtke.
+- Update traditional Chinese support made by William Chao.
+
+Bug fix:
+- Solved the issue 34: compliant with Gnome/Mutter.
+- Solved the issue 37: compliant with Gnome/Metacity.
+- Closed the issue 38: german language translation enhancement.
+
+Features:
+- Gtk3 port
+- multipointer and multitouch support (mpx)
+- hotplugging input devices
+- Metacity compliant
+- Mutter compliant
+- Gnome classic compiant
+- Gnome-shell compliant
+- Unity compliant
+- Add font selection and left margin size for text
+  from command line options. See the README file for
+  furthermore info. 
+
+Dependencies:
+- Require gtk 2.99
+
+---------------
+ ardesia 1.1 
+---------------
+
+Internationalization:
+- Add traditional Chinese support made by William Chao
+
+Bug fix
+- Fix a critical bug on Windows that caused some misbehaviours saving iwb
+- Eraser: fix the eraser tool using the the pen' back side windows
+- Clodes issue 42
+
+---------------
+ ardesia 1.0 
+---------------
+
+Feautures
+- Ubuntu 11.10 compliant
+- Persist the background setting options
+- Compliant with xfce desktop environment enabling the display compositing 
+  xfwm tweak or using compiz or xcompmgr composite manager
+- Compliant with kde desktop environment using kwin or compiz or xcompmgr 
+  composite manager
+- Pause the recording whenever necessary, and then resume when you want
+- Update backgrounds images
+- Add file permissions check for import/export functions 
+
+Dependencies:
+- Delete dependency from the libbfd
+- Delete dependency from binutils
+- Require gtk 2.16
+
+Internationalization:
+- Add the po/ardesia.pot translation template; you can use it 
+  to add the support to a missing language with poedit and others tools
+  (issue 27)
+
+Usability
+- keyboard accelerators
+  - ctrl+q to quit
+  - ctrl+z to undo
+  - ctrl+y to redo
+
+Bug Fix:
+- Solved the issue 22: the libbfd dependecy has been removed.
+- Solved the issue 30: configure strange behavior
+- Solved the issue 31: Losing Window Focus in Win7
+- Solved the issue 33: undo/redo implementation misbehaviour
+- Fix the clear button in order to clear the screen immediately
+
+
+---------------
+ ardesia 0.9
+---------------
+
+Features
+- The iwb file import/export feature has been enriched with
+- Ubuntu 10.10/11.04 compliant
+
+Dependencies:
+- Delete the zip/unzip dependency
+- Add a new requirement: the libgsf library
+
+
+Bug Fix:
+- Eraser: fix the eraser tool using the the back side of some
+  tablet pen
+
+---------------
+ ardesia 0.8
+---------------
+
+Usability
+- New mouse tool; the lock/unlock button has been removed
+- User interface revision; new tool and cursor icons
+
+Features
+- The iwb file import/export feature has been enriched with
+  the background settings
+- Add a new micro thickness for the tools
+- Easy circle painting with the rounder tool
+- Use the mouse tool with semi transparent coloured background
+- Ubuntu 10.04 compliant
+
+Bug Fix:
+- Arrow tool: caused the arrow detachment from the sketched polyline 
+- Rounder: broke the digital ink if it is was painted a short line
+  with this tool
+- Solved a critical bug that occurred if the tool is started with
+  the decorate command line option (-d)
+- Rounder: fix the elliptic close path filling
+- Fix the open/save iwb files under Windows
+- Fix the open/save iwb file uder the unix environment that has not
+  set an xdg documents folder
+
+
+---------------
+ ardesia 0.7
+---------------
+
+Internationalization:
+- Added german translation
+
+Packaging
+- New free windows installer created with an inno setup script
+
+Usability
+- The default folder where store the created files
+  called ardesia workspace now is located under the document folder
+- Created a shortcut on desktop that links to the ardesia workspace
+- Now to save an image you must push on the the camera photo icon
+
+Features
+- Now you can open, save and reuse projects thanks to the
+  Interactive Whiteboard Common File Format (iwbcff);
+  the artefacts will be saved under the ardesia workspace at the end 
+  of the session
+- At the end of the program you will be invited to send by email the
+  artefacts created in session (iwb file, png screenshots and pdf)
+- The virtual keyboard is shown each time that is focused an editable item;
+  this feature works only in Linux with the gnome environment and
+  in Windows 7 if you have the "Tablet PC Input Panel"
+- New crash report dialog
+- Improvements in the shape recognizer
+
+Bug Fix:
+- Fix in the filler a strange behaviour when you try to fill a not
+  closed path shape
+
+
+---------------
+ ardesia 0.6
+---------------
+
+Internationalization:
+- Add french translation
+
+Usability:
+- New text insertion tool to improve the usability;
+  implemented a new text insertion cursor, 
+  when you click on the page a new cursor blinks on
+  the text focus
+- New drawing mode tool: you can select the free hand mode,
+  the roundifier or the rectifier
+- insertion tool integration with the "Tablet PC Input Panel" on windows
+- insertion tool integration with the "Florence Ramble Virtual Keyboard"
+  on Linux in the Gnome Desktop environment
+- vlc used to perform the recording is auto detect if it is
+  installed in a default location
+
+
+Features:
+- When a fault occurs it logs the backtrace in tour TMP folder
+- Email support
+- Pdf email sender; when you quit the program if you have made
+  a pdf Ardesia opens your default mailer with a new stub mail
+  and it attaches your artefact
+- Bug Tracking: If the program is able to found a misbehaviour
+  it open an email stub with the log to be sent to the ardesia 
+  developers staff
+- Florence virtual keyboard integration: if you have it
+  installed, will be show/hide when you select the text
+  tool (linux only)
+
+
+---------------
+ ardesia 0.5
+---------------
+
+Dependencies:
+- gtk 2.16.6 included inside the windows package
+
+Usability:
+- performance improvement
+- faster pdf export
+- enhancement in the pressure support
+
+Features:
+- Ardesia now works with Kwin and xcompmgr
+  composite managers also
+- Better shape recognition with the roundifier tool;
+  now a new bezier algorithm and ellipse detection
+  has been implemented
+- low memory usage; the save point are stored on files
+- add system that print the backtrace in the case that
+  a segmentation fault occurs (linux only)
+
+Bug Fix:
+- fix the sound recording on Linux using pulse audio
+- fix a bug that caused the conjunction of the new drawn point
+  with the last point belong to the old line;
+  this problem occurred only using the xtest virtaul device
+  (this is used by the python-whiteboard wiimote driver also)
+- fix the opening image file as ardesia background right clicking
+  on file icon end selecting "open with ardesia"
+- fix the missing savepoint after the text insertion that
+  caused a wrong behaviour with undo and redo when was used
+  the text insertion tool
+
+
+---------------
+ ardesia 0.4
+---------------
+
+Dependencies:
+- removed the gconf dependency
+- removed the ezstream dependency
+- require vlc to record and forward the
+  live screencast to the icecast server
+
+Usability:
+- added Spanish translation
+
+Features:
+- Implemented cross platform recorder and stream forwarder
+- Added the pen pressure support  for the drawing tablet
+- Added the eraser support for the drawing tablet on Linux
+- Export as pdf
+
+Bug Fix:
+- Fix the file name suggestion in the
+  record and save wizard on windows
+- Solve the bug in the hide/show button
+  on windows
+- Fix the colour of the pen cursor synchronization
+  on windows
+
+
+---------------
+ ardesia 0.3
+---------------
+
+Dependencies:
+- ezstream to forward the live screencast
+  to the icecast server
+
+Features:
+- update to gpl-3
+- using getopt; the Unix standard for the command line parsing
+- use intltoolize to support the language translation
+- added info button with author info and license agreement
+  (issue 11)
+- added the verbosity option to trace the tool
+- undo/redo using vector graphics surfaces instead of raw images
+- added electronic whiteboard support
+- added tablet support
+- add stream forward support to an icecast server
+  to make a live online presentation
+- now you can different ardesia instances
+  one for each workspace
+- set the ardesia windows to stay always on the top
+- build on windows platform
+
+Bug fix:
+- fill now works after a close path drawn
+  with or within the highlighter selected
+- fix the behaviour of recorder
+  Now if the recordmydesktop tool
+  is missed a dialog shows the problem
+  (issue 9)
+- solved some memory leaks
+- solve a critical bug that froze the cursor
+  when the window loose the focus
+- solve a bug that froze the application
+  when the roundifier was enabled
+  and short a lines was drawn
+
+Usability:
+- better user interface
+- better arrow painting
+- added unlock button
+- increase the painting performance
+- enhancement in the shape recognizer
+- Dynamic change of eraser and pen cursor
+  depending on the selected width
+- hide the cursor after a paint to avoid that the cursor
+  overlap the annotations
+- lighter recording using subsampling; this allow to have
+  a good video for busier machines too
+- Added text insertion using keyboard
+- Added text insertion using external text input program
+  This feature is tested using
+  - the "onboard" virtual keyboard
+  - the "florence-ramble" virtual keyboard
+  - the "cellwriter" handwriting recognizer
+- Using a horizontal and vertical layout
+  (see the --gravity option)
+- Use a only one button to configure the line thickness (thin, medium, thick);
+  this seems compact and more usable with the whiteboard than the slide
+- better shape recognizer
+- fast responsiveness
+
+
+---------------
+ ardesia 0.2
+---------------
+
+The first public stable realease rewritten in C from scratch
+
+Dependencies:
+- libgtk-2 > 2.14; interface rewritten using
+  the new "gtk builder" glade format
+- recordmydesktop used at runtime for the on the fly recording
+
+Usability:
+- Multiple language support
+- English and Italian translations
+- Added the colour selector dialog
+- Added a button to clear all the screen
+- New pen and eraser cursor
+- Add the preference dialog that allow to change the background
+
+Features:
+- Draw rect lines
+- Draw broken lines
+- Smoothing algorithm for curves
+- Draw rectangles
+- Draw ellipses
+- Add text insertion
+- Draw arrow and double arrow
+- Save in jpeg or png format
+- Make screencast
+- Width selection
+- Colour selection 
+- Highlighter
+- Undo/redo
+- Draw Text
+- Realtime recorder 
+- Open png, jpeg and svg images as background
+- Background colour and opacity selection
+
+
+---------------
+ ardesia 0.1
+---------------
+
+The initial prototype written in python;
+this has not been distributed to the public.
+I have put this version in the trash.
+
+
+=====
+ EOF
+=====

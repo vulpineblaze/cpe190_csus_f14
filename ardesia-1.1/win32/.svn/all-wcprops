@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2665/trunk/ardesia/win32
+END
+build_installer.in
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2665/trunk/ardesia/win32/build_installer.in
+END
+RUN
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2492/trunk/ardesia/win32/RUN
+END
+ardesia.iss.in
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2665/trunk/ardesia/win32/ardesia.iss.in
+END
+iwb.ico
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2005/trunk/ardesia/win32/iwb.ico
+END
+ardesia_open.bat
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2004/trunk/ardesia/win32/ardesia_open.bat
+END

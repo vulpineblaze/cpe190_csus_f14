@@ -1,0 +1,21 @@
+# Files from the Ardesia distribution which have already been
+# marked to allow runtime translation of messages
+
+[encoding: UTF-8]
+
+desktop/annotation_window.glade
+desktop/background_window.glade
+desktop/crash_dialog.glade
+desktop/info_dialog.glade
+desktop/preference_dialog.glade
+desktop/project_dialog.glade
+desktop/share_confirmation_dialog.glade
+desktop/text_window.glade
+desktop/vertical_bar.glade
+
+src/ardesia.c
+src/bar_callbacks.c
+src/color_selector.c
+src/preference_dialog.c
+src/recorder.c
+src/saver.c

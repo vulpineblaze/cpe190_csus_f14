@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkWindow" id="annotationWindow">
+    <property name="app_paintable">True</property>
+    <property name="can_focus">False</property>
+    <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK</property>
+    <property name="title">window</property>
+    <property name="resizable">False</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="accept_focus">False</property>
+    <property name="focus_on_map">False</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="focus_visible">False</property>
+    <signal name="screen-changed" handler="on_screen_changed" swapped="no"/>
+    <signal name="proximity-out-event" handler="on_proximity_out" swapped="no"/>
+    <signal name="configure-event" handler="on_configure" swapped="no"/>
+    <signal name="button-press-event" handler="on_button_press" swapped="no"/>
+    <signal name="motion-notify-event" handler="on_motion_notify" swapped="no"/>
+    <signal name="button-release-event" handler="on_button_release" swapped="no"/>
+    <signal name="draw" handler="on_expose" swapped="no"/>
+    <signal name="proximity-in-event" handler="on_proximity_in" swapped="no"/>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+</interface>

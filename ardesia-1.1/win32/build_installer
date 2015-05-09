@@ -1,0 +1,167 @@
+#!/bin/sh
+
+echo "You need to execute this on a Windows machine within msys (http://www.mingw.org)" 
+echo "You also need InnoSetup (http://www.innosetup.org) with iscc in your PATH" 
+
+WIN32_DIR=win32
+DESTDIR=$WIN32_DIR/ardesia_1.1-windows-1_i386
+IS_VERSION=5
+IS_DIR=$PROGRAMFILES/Inno\ Setup\ $IS_VERSION
+PATH=$IS_DIR:$PATH
+ISCC_COMPILER=ISCC.exe
+ARDESIA_ISCC_FILENAME=$WIN32_DIR/ardesia.iss
+
+echo Inno Setup installation directory $IS_DIR
+echo Inno Setup compiler $ISCC_COMPILER
+echo Inno Setup $ARDESIA_ISCC_FILENAME
+
+mkdir -p $DESTDIR
+
+cp AUTHORS $DESTDIR
+cp COPYING $DESTDIR
+cp NEWS $DESTDIR
+cp README $DESTDIR
+cp $WIN32_DIR/RUN $DESTDIR
+
+
+echo Prepare the $DESTDIR directory 
+
+mkdir -p $DESTDIR/bin
+
+cp $WIN32_DIR/ardesia_open.bat $DESTDIR/bin
+
+cp /mingw/bin/libgsf-1-114.dll $DESTDIR/bin
+
+cp /mingw/bin/freetype6.dll $DESTDIR/bin
+cp /mingw/bin/gspawn-win32-helper.exe $DESTDIR/bin
+cp /mingw/bin/intl.dll $DESTDIR/bin
+cp /mingw/bin/libatk-1.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libcairo-2.dll $DESTDIR/bin
+cp /mingw/bin/libexpat-1.dll $DESTDIR/bin
+cp /mingw/bin/libfontconfig-1.dll $DESTDIR/bin
+cp /mingw/bin/libgdk-win32-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgdk_pixbuf-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgio-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libglib-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgmodule-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgobject-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgsl-0.dll $DESTDIR/bin
+cp /mingw/bin/libgslcblas-0.dll $DESTDIR/bin
+cp /mingw/bin/libgthread-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libgtk-win32-2.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libpango-1.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libpangocairo-1.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libpangoft2-1.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libpangowin32-1.0-0.dll $DESTDIR/bin
+cp /mingw/bin/libpng14-14.dll $DESTDIR/bin
+cp /mingw/bin/libxml2-2.dll $DESTDIR/bin
+cp /mingw/bin/zlib1.dll $DESTDIR/bin
+
+mkdir -p $DESTDIR/etc/gtk-2.0
+
+cp /mingw/etc/gtk-2.0/gdk-pixbuf.loaders $DESTDIR/etc/gtk-2.0
+
+mkdir -p $DESTDIR/lib/gtk-2.0/2.10.0/engines
+
+cp /mingw/lib/gtk-2.0/2.10.0/engines/libpixmap.dll $DESTDIR/lib/gtk-2.0/2.10.0/engines
+cp /mingw/lib/gtk-2.0/2.10.0/engines/libwimp.dll $DESTDIR/lib/gtk-2.0/2.10.0/engines
+
+mkdir -p $DESTDIR/lib/gtk-2.0/2.10.0/loaders
+
+
+cp /usr/bin/ardesia.exe $DESTDIR/bin
+cp /usr/bin/curtain.exe  $DESTDIR/bin
+cp /usr/bin/spotlighter.exe $DESTDIR/bin
+
+mkdir -p $DESTDIR/share/ardesia/scripts
+
+cp /usr/share/ardesia/scripts/screencast.bat $DESTDIR/share/ardesia/scripts
+
+mkdir -p $DESTDIR/share/ardesia/ui
+
+cp /usr/share/ardesia/ui/annotation_window.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/background_window.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/horizontal_bar.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/info_dialog.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/preference_dialog.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/project_dialog.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/text_window.glade $DESTDIR/share/ardesia/ui
+cp /usr/share/ardesia/ui/vertical_bar.glade $DESTDIR/share/ardesia/ui
+
+mkdir -p $DESTDIR/share/ardesia/ui/backgrounds
+
+cp /usr/share/ardesia/ui/backgrounds/blackboard.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/civil_society.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/musical_staff.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/notebook_paper.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/squared_blackboard.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/squared_paper.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/whiteboard.png $DESTDIR/share/ardesia/ui/backgrounds
+cp /usr/share/ardesia/ui/backgrounds/world_map.png $DESTDIR/share/ardesia/ui/backgrounds
+
+
+
+mkdir -p $DESTDIR/share/ardesia/ui/icons
+
+cp $WIN32_DIR/iwb.ico $DESTDIR/share/ardesia/ui/icons
+
+cp /usr/share/ardesia/ui/icons/add-pdf.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/ardesia_logo.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/ardesia.ico $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/arrow.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/blue.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/camera-photo.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/eraser.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/filler.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/green.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/hand.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/highlighter.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/media-record.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/media-recorder-unavailable.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/medium.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/pointer.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/pencil.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/rectifier.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/red.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/rounder.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/text.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/thick.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/thin.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/white.png $DESTDIR/share/ardesia/ui/icons
+cp /usr/share/ardesia/ui/icons/yellow.png $DESTDIR/share/ardesia/ui/icons
+
+mkdir -p $DESTDIR/share/curtain/ui
+
+cp /usr/share/curtain/ui/curtain.glade $DESTDIR/share/curtain/ui
+
+mkdir -p $DESTDIR/share/curtain/ui/icons
+
+cp /usr/share/curtain/ui/icons/curtain.png $DESTDIR/share/curtain/ui/icons
+cp /usr/share/curtain/ui/icons/curtain.ico $DESTDIR/share/curtain/ui/icons
+
+mkdir -p $DESTDIR/share/locale/de/LC_MESSAGES/
+
+cp /usr/share/locale/de/LC_MESSAGES/ardesia.mo $DESTDIR/share/locale/de/LC_MESSAGES/ardesia.mo
+
+mkdir -p $DESTDIR/share/locale/es/LC_MESSAGES/
+
+cp /usr/share/locale/es/LC_MESSAGES/ardesia.mo $DESTDIR/share/locale/es/LC_MESSAGES/ardesia.mo
+
+mkdir -p $DESTDIR/share/locale/fr/LC_MESSAGES/
+
+cp /usr/share/locale/fr/LC_MESSAGES/ardesia.mo $DESTDIR/share/locale/fr/LC_MESSAGES/ardesia.mo
+
+mkdir -p $DESTDIR/share/locale/it/LC_MESSAGES/
+
+cp /usr/share/locale/it/LC_MESSAGES/ardesia.mo $DESTDIR/share/locale/it/LC_MESSAGES/ardesia.mo
+
+mkdir -p $DESTDIR/share/spotlighter/ui/
+
+cp /usr/share/spotlighter/ui/spotlighter.glade $DESTDIR/share/spotlighter/ui/
+
+mkdir -p $DESTDIR/share/spotlighter/ui/icons
+cp /usr/share/spotlighter/ui/icons/spotlighter.ico $DESTDIR/share/spotlighter/ui/icons
+
+echo Build $ARDESIA_ISCC_FILENAME
+
+$ISCC_COMPILER $ARDESIA_ISCC_FILENAME
