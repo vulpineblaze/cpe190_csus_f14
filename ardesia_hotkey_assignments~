@@ -19,6 +19,6 @@ buttonRed		r
 buttonWhite		w
 buttonScreenShoot	s
 buttonAddPdf		a
-buttonRecorder		v
+buttonRecorder		r
 buttonQuit		premade, CTRL+q
 

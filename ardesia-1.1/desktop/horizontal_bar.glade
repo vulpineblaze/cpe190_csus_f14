@@ -196,6 +196,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">medium</property>
+                <accelerator key="k" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_thick_activate" swapped="no"/>
               </object>
               <packing>
@@ -214,6 +215,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">hand</property>
+                <accelerator key="m" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_mode_activate" swapped="no"/>
               </object>
               <packing>
@@ -302,6 +304,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">filler</property>
+                <accelerator key="f" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_filler_activate" swapped="no"/>
               </object>
               <packing>
@@ -319,6 +322,7 @@
                 <property name="valign">center</property>
                 <property name="use_action_appearance">False</property>
                 <property name="stock_id">gtk-clear</property>
+                <accelerator key="c" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_clear_activate" swapped="no"/>
               </object>
               <packing>
@@ -355,6 +359,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">pointer</property>
                 <property name="group">buttonPencil</property>
+                <accelerator key="n" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_pointer_activate" swapped="no"/>
               </object>
               <packing>
@@ -374,6 +379,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">arrow</property>
                 <property name="group">buttonPencil</property>
+                <accelerator key="o" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_arrow_activate" swapped="no"/>
               </object>
               <packing>
@@ -393,6 +399,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">text</property>
                 <property name="group">buttonPencil</property>
+                <accelerator key="t" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_text_activate" swapped="no"/>
               </object>
               <packing>
@@ -412,6 +419,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">highlighter</property>
                 <property name="group">buttonPencil</property>
+                <accelerator key="h" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_highlighter_activate" swapped="no"/>
               </object>
               <packing>
@@ -431,6 +439,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">eraser</property>
                 <property name="group">buttonPencil</property>
+                <accelerator key="e" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_eraser_activate" swapped="no"/>
               </object>
               <packing>
@@ -449,6 +458,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">pencil</property>
+                <accelerator key="p" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_pencil_activate" swapped="no"/>
               </object>
               <packing>
@@ -485,6 +495,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">blue</property>
                 <property name="group">buttonRed</property>
+                <accelerator key="b" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_blue_activate" swapped="no"/>
               </object>
               <packing>
@@ -504,6 +515,7 @@
                 <property name="use_underline">True</property>
                 <property name="icon_widget">green</property>
                 <property name="group">buttonRed</property>
+                <accelerator key="g" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_green_activate" swapped="no"/>
               </object>
               <packing>
@@ -523,6 +535,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">yellow</property>
                 <property name="group">buttonRed</property>
+                <accelerator key="y" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_yellow_activate" swapped="no"/>
               </object>
               <packing>
@@ -541,6 +554,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">red</property>
+                <accelerator key="r" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_red_activate" swapped="no"/>
               </object>
               <packing>
@@ -560,6 +574,7 @@
                 <property name="use_underline">True</property>
                 <property name="label_widget">white</property>
                 <property name="group">buttonRed</property>
+                <accelerator key="w" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_white_activate" swapped="no"/>
               </object>
               <packing>
@@ -631,6 +646,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">screenshoot</property>
+                <accelerator key="s" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_screenshot_activate" swapped="no"/>
               </object>
               <packing>
@@ -649,6 +665,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">addpdf</property>
+                <accelerator key="a" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_add_pdf_activate" swapped="no"/>
               </object>
               <packing>
@@ -667,6 +684,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
                 <property name="label_widget">media-record</property>
+                <accelerator key="v" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK"/>
                 <signal name="clicked" handler="on_bar_recorder_activate" swapped="no"/>
               </object>
               <packing>
